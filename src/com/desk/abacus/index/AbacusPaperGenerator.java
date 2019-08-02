@@ -27,7 +27,6 @@ public class AbacusPaperGenerator {
 			new ExportPDF().exportPDFFile("C-M ZHUSUAN", "D:\\ABACUS\\Papers\\cm.pdf", cm);
 
 		} catch (Exception e) {
-			System.out.print("Something went wrong : " + e);
 			e.printStackTrace();
 		}
 	}
