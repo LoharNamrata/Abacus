@@ -33,7 +33,7 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		}
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
-			if (i == 2 || i == 9 || i == 16 || i == 3) {
+			if (i > 16) {
 				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 5));
 			} else {
 				row3.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 9));
@@ -50,7 +50,7 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i == 3 || i == 10 || i == 17 || i == 5) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 2));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 4));
 			} else {
 				row5.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 9));
 			}
@@ -124,9 +124,9 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row2 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 5));
+				row2.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 5));
 			} else {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(30, 70));
+				row2.add(this.defaultAbacusABRowData.positiveSingleDigit(30, 70));
 			}
 		}
 		Collection<Integer> row3 = new ArrayList<Integer>();
@@ -140,9 +140,9 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row4 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 == 0) {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(5, 5));
+				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(5, 6));
 			} else {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(20, 20));
 			}
 		}
 		Collection<Integer> row5 = new ArrayList<Integer>();
@@ -157,9 +157,9 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row7 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(5, 5));
+				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(4, 5));
 			} else {
-				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 33));
 			}
 		}
 		Collection<Integer> row8 = this.defaultAbacusABRowData.positiveSingle(3, 9, 25);
@@ -191,15 +191,15 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 == 0) {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(55, 50));
+				row3.add(this.defaultAbacusABRowData.positiveSingleDigit(40, 50));
 			} else {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(20, 30));
 			}
 		}
 		Collection<Integer> row4 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 60));
+				row4.add(this.defaultAbacusABRowData.positiveSingleDigit(40, 60));
 			} else {
 				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 50));
 			}
@@ -228,16 +228,16 @@ public class DefaultAbacusDNImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 == 0) {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(55, 50));
+				row3.add(this.defaultAbacusABRowData.positiveSingleDigit(30, 60));
 			} else {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 43));
 			}
 		}
-		Collection<Integer> row4 = this.defaultAbacusABRowData.negativeSingle(30, 70, 25);
+		Collection<Integer> row4 = this.defaultAbacusABRowData.positiveSingle(30, 70, 25);
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 60));
+				row5.add(this.defaultAbacusABRowData.positiveSingleDigit(40, 60));
 			} else {
 				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 50));
 			}

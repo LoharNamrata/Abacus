@@ -7,12 +7,16 @@ import java.util.Map;
 
 import com.desk.abacus.adaptor.DefaultAbacusABRow;
 import com.desk.abacus.data.impl.DefaultAbacusABRowData;
+import com.desk.abacus.data.impl.DefaultAbacusDivRowData;
+import com.desk.abacus.data.impl.DefaultAbacusMulRowData;
 import com.desk.abacus.datas.AbacusDivRow;
 import com.desk.abacus.datas.AbacusMulRow;
 
 public class DefaultAbacusFImplemetation extends DefaultAbacusABRow implements AbacusMulRow, AbacusDivRow {
 
 	private DefaultAbacusABRowData defaultAbacusABRowData = new DefaultAbacusABRowData();
+	private DefaultAbacusMulRowData defaultAbacusMulRowData = new DefaultAbacusMulRowData();
+	private DefaultAbacusDivRowData defaultAbacusDivRowData = new DefaultAbacusDivRowData();
 
 	public Collection<Integer> generateARow() {
 		Collection<Integer> row = new ArrayList<Integer>();
@@ -38,7 +42,7 @@ public class DefaultAbacusFImplemetation extends DefaultAbacusABRow implements A
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i == 3 || i == 10 || i == 17 || i == 5) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 2));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 3));
 			} else {
 				row5.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 9));
 			}
@@ -107,16 +111,16 @@ public class DefaultAbacusFImplemetation extends DefaultAbacusABRow implements A
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 == 0) {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(55, 50));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 50));
 			} else {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(10, 20));
 			}
 		}
 		Collection<Integer> row4 = this.defaultAbacusABRowData.positiveSingle(55, 70, 25);
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 60));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(30, 60));
 			} else {
 				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 50));
 			}
@@ -139,18 +143,18 @@ public class DefaultAbacusFImplemetation extends DefaultAbacusABRow implements A
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 == 0) {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(55, 50));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(20, 40));
 			} else {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(10, 20));
 			}
 		}
 		Collection<Integer> row4 = this.defaultAbacusABRowData.positiveSingle(55, 70, 25);
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 60));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(30, 50));
 			} else {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 50));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(50, 60));
 			}
 		}
 
@@ -164,16 +168,10 @@ public class DefaultAbacusFImplemetation extends DefaultAbacusABRow implements A
 	}
 
 	@Override
-	public Map<Integer, Integer> division(int dividentStart, int dividentEnd, int devisorStart, int devisorEnd) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Map<Integer, Integer> multiplication(int multiplicantStart, int multiplicantEnd, int multiplierStart,
-			int multiplierEnd) {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<String> division(int dividentStart, int dividentEnd, int devisorStart, int devisorEnd) {
+		Collection<String> division = this.defaultAbacusDivRowData.division(dividentStart, dividentEnd, devisorStart,
+				devisorEnd);
+		return division;
 	}
 
 	public Map<String, Collection<Integer>> getTables() {
@@ -186,4 +184,28 @@ public class DefaultAbacusFImplemetation extends DefaultAbacusABRow implements A
 		return row;
 	}
 
+	@Override
+	public Collection<String> multiplication(int multiplicantStart, int multiplicantEnd, int multiplierStart,
+			int multiplierEnd) {
+		Collection<String> multiple = this.defaultAbacusMulRowData.multiplication(multiplicantStart, multiplicantEnd,
+				multiplierStart, multiplierEnd);
+		return multiple;
+	}
+
+	public Map<Integer, Collection<String>> getMulDivTables() {
+
+		Map<Integer, Collection<String>> mul = new HashMap<Integer, Collection<String>>();
+
+		Collection<String> mul1 = this.multiplication(35, 94, 2, 9);
+		Collection<String> mul2 = this.multiplication(140, 990, 2, 9);
+		Collection<String> mul3 = this.division(135, 984, 2, 9);
+		Collection<String> mul4 = this.division(140, 990, 2, 9);
+
+		mul.put(1, mul1);
+		mul.put(2, mul2);
+		mul.put(3, mul3);
+		mul.put(4, mul4);
+
+		return mul;
+	}
 }

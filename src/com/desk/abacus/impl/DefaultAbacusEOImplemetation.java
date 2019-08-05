@@ -7,11 +7,13 @@ import java.util.Map;
 
 import com.desk.abacus.adaptor.DefaultAbacusABRow;
 import com.desk.abacus.data.impl.DefaultAbacusABRowData;
+import com.desk.abacus.data.impl.DefaultAbacusMulRowData;
 import com.desk.abacus.datas.AbacusMulRow;
 
 public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements AbacusMulRow {
 
 	private DefaultAbacusABRowData defaultAbacusABRowData = new DefaultAbacusABRowData();
+	private DefaultAbacusMulRowData defaultAbacusMulRowData = new DefaultAbacusMulRowData();
 
 	public Collection<Integer> generateARow() {
 		Collection<Integer> row = new ArrayList<Integer>();
@@ -51,7 +53,7 @@ public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements 
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i == 3 || i == 10 || i == 17 || i == 5) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 2));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 3));
 			} else {
 				row5.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 9));
 			}
@@ -120,48 +122,41 @@ public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements 
 			if (i % 2 == 0) {
 				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(5, 9));
 			} else {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(50, 80));
+				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(70, 90));
 			}
 		}
 		Collection<Integer> row2 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 5));
+				row2.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 5));
 			} else {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(30, 70));
+				row2.add(this.defaultAbacusABRowData.positiveSingleDigit(70, 90));
 			}
 		}
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
-			if (i % 5 == 0) {
+			if (i % 2 == 0) {
 				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(20, 50));
 			} else {
 				row3.add(this.defaultAbacusABRowData.positiveSingleDigit(35, 75));
 			}
 		}
-		Collection<Integer> row4 = new ArrayList<Integer>();
-		for (int i = 1; i <= 25; i++) {
-			if (i % 2 == 0) {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(5, 5));
-			} else {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
-			}
-		}
+		Collection<Integer> row4 = this.defaultAbacusABRowData.positiveSingle(6, 9, 25);
 		Collection<Integer> row5 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
-			if (i % 5 != 0) {
-				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(50, 99));
+			if (i % 2 != 0) {
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 50));
 			} else {
-				row5.add(this.defaultAbacusABRowData.positiveSingleDigit(45, 85));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(45, 55));
 			}
 		}
 		Collection<Integer> row6 = this.defaultAbacusABRowData.positiveSingle(6, 9, 25);
 		Collection<Integer> row7 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 != 0) {
-				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(5, 5));
+				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(4, 5));
 			} else {
-				row7.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row7.add(this.defaultAbacusABRowData.positiveSingleDigit(33, 50));
 			}
 		}
 		Collection<Integer> row8 = this.defaultAbacusABRowData.positiveSingle(3, 9, 25);
@@ -186,9 +181,9 @@ public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements 
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (int i = 1; i <= 25; i++) {
 			if (i % 2 == 0) {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(55, 50));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 50));
 			} else {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 20));
+				row3.add(this.defaultAbacusABRowData.positiveSingleDigit(33, 60));
 			}
 		}
 		Collection<Integer> row4 = new ArrayList<Integer>();
@@ -196,7 +191,7 @@ public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements 
 			if (i % 2 != 0) {
 				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 60));
 			} else {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(33, 50));
+				row4.add(this.defaultAbacusABRowData.positiveSingleDigit(33, 50));
 			}
 		}
 
@@ -208,13 +203,6 @@ public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements 
 		return row;
 	}
 
-	@Override
-	public Map<Integer, Integer> multiplication(int multiplicantStart, int multiplicantEnd, int multiplierStart,
-			int multiplierEnd) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public Map<String, Collection<Integer>> getTables() {
 		Map<String, Collection<Integer>> row = new HashMap<String, Collection<Integer>>();
 
@@ -223,6 +211,22 @@ public class DefaultAbacusEOImplemetation extends DefaultAbacusABRow implements 
 		row.put("C", this.generateCRow());
 
 		return row;
+	}
+
+	public Map<Integer, Collection<String>> getMulTables(int noTab) {
+		Map<Integer, Collection<String>> mul = new HashMap<Integer, Collection<String>>();
+		for (int i = 1; i <= noTab; i++) {
+			mul.put(i, this.multiplication(21, 80, 3, 9));
+		}
+		return mul;
+	}
+
+	@Override
+	public Collection<String> multiplication(int multiplicantStart, int multiplicantEnd, int multiplierStart,
+			int multiplierEnd) {
+		Collection<String> multiple = this.defaultAbacusMulRowData.multiplication(multiplicantStart, multiplicantEnd,
+				multiplierStart, multiplierEnd);
+		return multiple;
 	}
 
 }

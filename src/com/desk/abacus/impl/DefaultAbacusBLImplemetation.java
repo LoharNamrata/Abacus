@@ -68,9 +68,9 @@ public class DefaultAbacusBLImplemetation extends DefaultAbacusABRow {
 			Integer i1 = it1.next();
 			Integer i2 = it2.next();
 			if (i1 < 0 || i2 < 0) {
-				row4.add(this.defaultAbacusABRowData.positiveSingleDigit(3, 9));
+				row5.add(this.defaultAbacusABRowData.positiveSingleDigit(3, 9));
 			} else {
-				row4.add(this.defaultAbacusABRowData.negativeSingleDigit(9, 9));
+				row5.add(this.defaultAbacusABRowData.negativeSingleDigit(9, 9));
 			}
 		}
 
@@ -120,15 +120,15 @@ public class DefaultAbacusBLImplemetation extends DefaultAbacusABRow {
 		Collection<Integer> row2 = new ArrayList<Integer>();
 		for (Integer item : row1) {
 			if (item >= 60) {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 9));
+				row2.add(this.defaultAbacusABRowData.positiveSingleDigit(1, 9));
 			} else {
-				row1.add(this.defaultAbacusABRowData.positiveSingleDigit(33, 69));
+				row2.add(this.defaultAbacusABRowData.positiveSingleDigit(33, 69));
 			}
 		}
 		Collection<Integer> row3 = new ArrayList<Integer>();
 		for (Integer item : row2) {
 			if (item > 10) {
-				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(50, 30));
+				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(40, 40));
 			} else if (item > 5) {
 				row3.add(this.defaultAbacusABRowData.negativeSingleDigit(3, 9));
 			} else {
