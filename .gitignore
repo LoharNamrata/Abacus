@@ -31,3 +31,4 @@ src/test/*
 .settings/*
 
 .classpath
+/target/
